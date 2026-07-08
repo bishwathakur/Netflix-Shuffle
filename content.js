@@ -3,7 +3,7 @@
   const PANEL_ID = "nf-shuffle-panel";
 
   let injected = false;
-  let isShuffling = false; // <--- THE MEMORY FIX
+  let isShuffling = false;
 
   function log(...args) {
     console.log("[Netflix Shuffle]", ...args);
@@ -21,7 +21,7 @@
   }
 
   function setButtonState(isLoading) {
-    isShuffling = isLoading; // Save the state globally
+    isShuffling = isLoading;  
     const btn = document.getElementById(BUTTON_ID);
     if (!btn) return;
 
@@ -258,9 +258,8 @@
   }
 
   function injectButton() {
-    if (document.getElementById(BUTTON_ID)) {
-        // If the button exists but was redrawn by React, ensure it has the correct state
-        if (isShuffling) setButtonState(true);
+    if (document.getElementById(BUTTON_ID)) { 
+        if (isShuffling) setButtonState(true);  
         return;
     }
 
