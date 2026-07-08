@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Netflix Episode Shuffle",
+  "version": "2.0",
+  "description": "Randomly shuffles episodes across all available seasons with a loading spinner.",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.netflix.com/*",
+        "*://www.netflix.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}

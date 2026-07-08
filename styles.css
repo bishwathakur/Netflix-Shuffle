@@ -1,0 +1,54 @@
+#nf-shuffle-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999999;
+  background: #e50914;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+#nf-shuffle-btn:hover {
+  background: #f6121d;
+  transform: translateY(-2px);
+}
+
+#nf-shuffle-panel {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  z-index: 999999;
+  background: #181818;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 300px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+#nf-shuffle-panel button {
+  margin-top: 8px;
+  background: #e50914;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+#nf-shuffle-panel button:hover {
+  background: #f6121d;
+}
