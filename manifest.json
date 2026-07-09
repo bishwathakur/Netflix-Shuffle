@@ -1,8 +1,15 @@
 {
   "manifest_version": 3,
   "name": "Netflix Episode Shuffle",
-  "version": "2.0",
-  "description": "Randomly shuffles episodes across all available seasons with a loading spinner.",
+  "version": "2.1.0",
+  "description": "Randomly shuffle episodes across Netflix shows with one click. Modern UI with responsive design and accessibility support.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.netflix.com/*",
+    "*://www.netflix.com/*"
+  ],
   "icons": {
     "16": "icons/icon.png",
     "48": "icons/icon.png",
@@ -14,7 +21,28 @@
         "*://*.netflix.com/*",
         "*://www.netflix.com/*"
       ],
-      "js": ["content.js"]
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
     }
-  ]
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "styles.css"
+      ],
+      "matches": [
+        "*://*.netflix.com/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "icons/icon.png",
+      "48": "icons/icon.png",
+      "128": "icons/icon.png"
+    },
+    "default_title": "Netflix Episode Shuffle - Ctrl+Shift+S"
+  }
 }

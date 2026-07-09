@@ -1,54 +1,88 @@
+/* Shuffle button — !important beats Netflix's global button resets */
 #nf-shuffle-btn {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 999999;
-  background: #e50914;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 12px 18px;
-  font-size: 15px;
-  font-weight: 600;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
-  transition: transform 0.15s ease, background 0.15s ease;
-}
-
-#nf-shuffle-btn:hover {
-  background: #f6121d;
-  transform: translateY(-2px);
-}
-
-#nf-shuffle-panel {
-  position: fixed;
-  bottom: 90px;
-  right: 24px;
-  z-index: 999999;
-  background: #181818;
-  color: #fff;
-  border: 1px solid #333;
-  border-radius: 8px;
-  padding: 16px;
-  max-width: 300px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  line-height: 1.4;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-}
-
-#nf-shuffle-panel button {
-  margin-top: 8px;
-  background: #e50914;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 6px 12px;
-  cursor: pointer;
-  font-size: 13px;
-}
-
-#nf-shuffle-panel button:hover {
-  background: #f6121d;
-}
+    position: fixed !important;
+    bottom: 24px !important;
+    right: 24px !important;
+    z-index: 999999 !important;
+    display: none;
+    background: #e50914 !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 6px !important;
+    padding: 12px 18px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    line-height: 1.2 !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+    transition: transform 0.15s ease, background 0.15s ease, opacity 0.15s ease !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+  }
+  
+  #nf-shuffle-btn:hover:not(:disabled) {
+    background: #f6121d !important;
+    transform: translateY(-2px) !important;
+  }
+  
+  #nf-shuffle-btn:disabled,
+  #nf-shuffle-btn.loading {
+    opacity: 0.85 !important;
+    cursor: wait !important;
+    transform: none !important;
+  }
+  
+  @keyframes nf-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  #nf-shuffle-btn .nf-spinner {
+    display: inline-block;
+    animation: nf-spin 1s linear infinite;
+    margin-right: 6px;
+    font-size: 16px;
+  }
+  
+  /* Fallback panel */
+  #nf-shuffle-panel {
+    position: fixed !important;
+    bottom: 90px !important;
+    right: 24px !important;
+    z-index: 999999 !important;
+    background: #181818 !important;
+    color: #fff !important;
+    border: 1px solid #333 !important;
+    border-radius: 8px !important;
+    padding: 16px !important;
+    max-width: 300px !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+  }
+  
+  #nf-shuffle-panel.hide {
+    display: none !important;
+  }
+  
+  #nf-shuffle-panel.show {
+    display: block !important;
+  }
+  
+  #nf-shuffle-panel button {
+    margin-top: 8px !important;
+    background: #e50914 !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 4px !important;
+    padding: 6px 12px !important;
+    cursor: pointer !important;
+    font-size: 13px !important;
+  }
+  
+  #nf-shuffle-panel button:hover {
+    background: #f6121d !important;
+  }
+  
